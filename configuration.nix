@@ -107,5 +107,8 @@
       userName = "Blake Wilson";
       userEmail = "blake@yellowpapersun.com";
     };
+    programs.neovim = {
+      enable = true;
+    };
   };
 }
