@@ -7,8 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./nvim.nix
       ./hardware-configuration.nix
-      "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos"
     ];
 
   # Use the GRUB 2 boot loader.
@@ -20,7 +20,7 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -39,9 +39,13 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   wget vim
-  # ];
+  environment.systemPackages = with pkgs; [
+    wget
+    vim
+    # neovim
+    myNeovim
+    git
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -67,21 +71,9 @@
   # hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbOptions = "eurosign:e";
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      extraPackages = haskellPackages: with haskellPackages; [
-        haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
-        haskellPackages.xmonad
-       ];
-    };
-    windowManager.default = "xmonad";
-  };
+  # services.xserver.enable = true;
+  # services.xserver.layout = "us";
+  # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
@@ -92,8 +84,8 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.blake = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
   # This value determines the NixOS release with which your system is to be
@@ -101,14 +93,5 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "19.03"; # Did you read the comment?
-  home-manager.users.blake = {
-    programs.git = {
-      enable = true;
-      userName = "Blake Wilson";
-      userEmail = "blake@yellowpapersun.com";
-    };
-    programs.neovim = {
-      enable = true;
-    };
-  };
+
 }
