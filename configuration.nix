@@ -71,7 +71,22 @@
   # hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    xkbOptions = "eurosign:e";
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      extraPackages = haskellPackages: with haskellPackages; [
+        haskellPackages.xmonad-contrib
+        haskellPackages.xmonad-extras
+        haskellPackages.xmonad
+       ];
+    };
+    windowManager.default = "xmonad";
+  };
+
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
