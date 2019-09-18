@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./nvim.nix
+      ./zsh.nix
       ./hardware-configuration.nix
       # ./base16/default.nix
     ];
@@ -50,6 +51,7 @@
     zip
     unzip
   ];
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -105,6 +107,7 @@
   users.users.blake = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
   };
 
   # This value determines the NixOS release with which your system is to be
