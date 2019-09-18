@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./nvim.nix
       ./hardware-configuration.nix
+      # ./base16/default.nix
     ];
 
   # Use the GRUB 2 boot loader.
