@@ -8,6 +8,9 @@
     export PATH=$PATH:$HOME/go_appengine
     export VENV=local
     export TERM=xterm-256color
+
+    # Hide host name
+    export PS1="%~ \$"
     
     # Tomorrow Night color scheme
     color00="1d/1f/21" # Base 00 - Black
@@ -119,10 +122,8 @@
     unset color21
     unset color_foreground
     unset color_background
+    # End colors config
 
-
-
-    
     export MAVEN_OPTS="-Xmx4096m -Xss1024m -XX:MaxPermSize=128m"
     export ANT_OPTS="-Xms512m -Xmx1024m"
     
@@ -163,8 +164,6 @@
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
     zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
     
-    # Hide host name
-    export PS1=''\"''\%''\~ ''\$''\"
     export DEFAULT_USER=`whoami`
     
     export WORKON_HOME=$HOME/.virtualenvs
