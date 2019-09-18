@@ -29,6 +29,7 @@ let g:deoplete#sources#rust#racer_binary="/home/blake/.cargo/bin/racer"
 let g:deoplete#sources#rust#rust_source_path="/home/blake/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let g:rustfmt_autosave = 1
 
+let base16colorspace=256
 colorscheme base16-tomorrow-night
 
 " auto-format Terraform on save
