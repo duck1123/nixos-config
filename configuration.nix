@@ -39,6 +39,11 @@
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
 
+  nix.nixPath = [
+    "nixpkgs=/etc/nixos/nixpkgs"
+    "nixos-conig=/etc/nixos/configuration.nix"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
