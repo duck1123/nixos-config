@@ -40,7 +40,7 @@
   # time.timeZone = "Europe/Amsterdam";
 
   nix.nixPath = [
-    "nixpkgs=/etc/nixos/nixpkgs"
+    "nixpkgs=/etc/nixos/nixpkgs-channels"
     "nixos-conig=/etc/nixos/configuration.nix"
   ];
 
