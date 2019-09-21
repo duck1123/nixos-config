@@ -171,6 +171,7 @@ autocmd FileType ruby nmap gd :CtrlPTag<cr>
 
 "" Go settings
 au Bufread,BufNewFile *.go noremap grn :GoRename<CR>
+au Bufread,BufNewFile *.go noremap gd :GoDef<CR>
 
 au BufRead,BufNewFile *.frugal setlocal ft=thrift
 
