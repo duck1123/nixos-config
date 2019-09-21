@@ -40,8 +40,8 @@
   # time.timeZone = "Europe/Amsterdam";
 
   nix.nixPath = [
-    "nixpkgs=/etc/nixos/nixpkgs-channels"
-    "nixos-conig=/etc/nixos/configuration.nix"
+    "nixos-config=/etc/nixos/configuration.nix"
+    "nixpkgs=/etc/nixos/nixpkgs"
   ];
 
   # List packages installed in system profile. To search, run:

@@ -9,6 +9,7 @@
             fugitive
             deoplete-go
             ctrlp
+            vim-go
             deoplete-nvim
             deoplete-rust
             base16-vim
