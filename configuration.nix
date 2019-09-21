@@ -41,7 +41,7 @@
 
   nix.nixPath = [
     "nixos-config=/etc/nixos/configuration.nix"
-    "nixpkgs=/etc/nixos/nixpkgs"
+    "nixpkgs=/etc/nixos/nixpkgs-channels"
   ];
 
   # List packages installed in system profile. To search, run:
