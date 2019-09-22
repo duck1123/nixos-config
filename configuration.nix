@@ -51,7 +51,8 @@
     vim
     # neovim
     myNeovim
-    git
+    # git
+    less
     firefox
     zip
     unzip

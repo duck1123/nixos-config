@@ -6,6 +6,8 @@
     export PATH=$PATH:/usr/local/go/bin
     export PATH=$PATH:$GOPATH/bin
     export PATH=$PATH:$HOME/go_appengine
+    # Add nix profile to path
+    export PATH=$PATH:/home/blake/.nix-profile/bin
     export VENV=local
     export TERM=xterm-256color
 
