@@ -1,0 +1,7 @@
+[core]
+    excludesfile = SUBSTITUTE_GITIGNORE
+[user]
+    name = Blake Wilson
+    email = blake@yellowpapersun.com
+[push]
+    default = simple
