@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -30,11 +30,13 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  # i18n = {
+  i18n = {
+      consoleFont = "ter-i32b";
+      consolePackages = with pkgs; [ terminus_font ];
   #   consoleFont = "Lat2-Terminus16";
   #   consoleKeyMap = "us";
   #   defaultLocale = "en_US.UTF-8";
-  # };
+  };
 
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
@@ -98,6 +100,33 @@
        ];
     };
     windowManager.default = "xmonad";
+    displayManager.lightdm.enable = true;
+    displayManager.sessionCommands = ''
+       xrdb "${pkgs.writeText  "xrdb.conf" ''
+          URxvt.font:                 xft:Dejavu Sans Mono for Powerline:size=22
+          XTerm*faceName:             xft:Dejavu Sans Mono for Powerline:size=22
+          XTerm*utf8:                 2
+          URxvt.letterSpace:          0
+          URxvt*saveLines:            32767
+          XTerm*saveLines:            32767
+          URxvt.url-select.launcher:  /usr/bin/firefox -new-tab
+          URxvt.url-select.underline: true
+          Xft*dpi:                    96
+          Xft*antialias:              true
+          Xft*hinting:                full
+          URxvt.scrollBar:            false
+          URxvt*scrollTtyKeypress:    true
+          URxvt*scrollTtyOutput:      false
+          URxvt*scrollWithBuffer:     false
+          URxvt*scrollstyle:          plain
+          URxvt*secondaryScroll:      true
+          Xft.autohint: 0
+          Xft.lcdfilter:  lcddefault
+          Xft.hintstyle:  hintfull
+          Xft.hinting: 1
+          Xft.antialias: 1
+       ''}"
+    '';
   };
 
   # services.xserver.layout = "us";
