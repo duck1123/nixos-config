@@ -8,6 +8,7 @@
     export PATH=$PATH:$HOME/go_appengine
     # Add nix profile to path
     export PATH=$PATH:/home/blake/.nix-profile/bin
+    export NIX_PATH=nixos-config=/etc/nixos/configuration.nix:nixpkgs=/etc/nixos/nixpkgs-channels
     export VENV=local
     export TERM=xterm-256color
 
