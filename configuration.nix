@@ -31,7 +31,7 @@
 
   # Select internationalisation properties.
   i18n = {
-      consoleFont = "ter-i32b";
+      consoleFont = "ter-i22b";
       consolePackages = with pkgs; [ terminus_font ];
   #   consoleFont = "Lat2-Terminus16";
   #   consoleKeyMap = "us";
