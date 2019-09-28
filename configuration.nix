@@ -4,6 +4,11 @@
 
 { config, lib, pkgs, ... }:
 
+let
+  moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
+  nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
+in
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -44,7 +49,9 @@
   nix.nixPath = [
     "nixos-config=/etc/nixos/configuration.nix"
     "nixpkgs=/etc/nixos/nixpkgs-channels"
+    "nixpkgs-overlays=/etc/nixos/overlays"
   ];
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -59,6 +66,7 @@
     firefox
     zip
     unzip
+    nixpkgs.latest.rustChannels.nightly.rust
   ];
   programs.zsh.enable = true;
 
