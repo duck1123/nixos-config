@@ -31,7 +31,7 @@
 
   # Select internationalisation properties.
   i18n = {
-      consoleFont = "ter-i22b";
+      consoleFont = "ter-i16b";
       consolePackages = with pkgs; [ terminus_font ];
   #   consoleFont = "Lat2-Terminus16";
   #   consoleKeyMap = "us";
@@ -103,8 +103,8 @@
     displayManager.lightdm.enable = true;
     displayManager.sessionCommands = ''
        xrdb "${pkgs.writeText  "xrdb.conf" ''
-          URxvt.font:                 xft:Dejavu Sans Mono for Powerline:size=22
-          XTerm*faceName:             xft:Dejavu Sans Mono for Powerline:size=22
+          URxvt.font:                 xft:Dejavu Sans Mono for Powerline:size=14
+          XTerm*faceName:             xft:Dejavu Sans Mono for Powerline:size=14
           XTerm*utf8:                 2
           URxvt.letterSpace:          0
           URxvt*saveLines:            32767
