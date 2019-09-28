@@ -66,6 +66,7 @@ in
     firefox
     zip
     unzip
+    gcc
     nixpkgs.latest.rustChannels.nightly.rust
   ];
   programs.zsh.enable = true;
