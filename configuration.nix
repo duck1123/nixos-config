@@ -12,9 +12,9 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
       ./nvim.nix
       ./zsh.nix
-      ./hardware-configuration.nix
       # ./base16/default.nix
     ];
 
@@ -26,6 +26,11 @@ in
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+
+  systemd.coredump.enable = true;
+
+  # Allow unfree packages (e.g. Spotify)
+  nixpkgs.config.allowUnfree = true;
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -64,6 +69,8 @@ in
     less
     xclip
     firefox
+    # Not working yet
+    # spotify
     zip
     unzip
     gcc
@@ -91,8 +98,8 @@ in
   # services.printing.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
