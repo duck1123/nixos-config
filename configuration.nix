@@ -28,6 +28,10 @@ in
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   systemd.coredump.enable = true;
+  security.pam.loginLimits = [
+    { domain = "*"; item = "core"; type = "soft"; value = "unlimited"; }
+  ];
+  systemd.extraConfig = "DefaultLimitCORE=1000000";
 
   # Allow unfree packages (e.g. Spotify)
   nixpkgs.config.allowUnfree = true;
@@ -69,11 +73,11 @@ in
     less
     xclip
     firefox
-    # Not working yet
-    # spotify
+    spotify
     zip
     unzip
     gcc
+    gdb
     nixpkgs.latest.rustChannels.nightly.rust
   ];
   programs.zsh.enable = true;
