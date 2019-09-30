@@ -7,6 +7,11 @@
 let
   moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
   nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
+  my_python_packages = python-packages: with python-packages; [
+    pynvim
+    nvr
+  ];
+  python_with_my_packages = nixpkgs.python3.withPackages my_python_packages;
 in
 
 {
@@ -67,7 +72,6 @@ in
   environment.systemPackages = with pkgs; [
     wget
     vim
-    # neovim
     myNeovim
     # git
     less
@@ -78,6 +82,7 @@ in
     unzip
     gcc
     gdb
+    python_with_my_packages
     nixpkgs.latest.rustChannels.nightly.rust
   ];
   programs.zsh.enable = true;
