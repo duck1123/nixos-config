@@ -80,6 +80,7 @@ in
     spotify
     zip
     unzip
+    binutils
     gcc
     gdb
     python_with_my_packages
@@ -96,6 +97,9 @@ in
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Enable mongodb
+  # services.mongodb.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
