@@ -1,5 +1,6 @@
 [core]
     excludesfile = SUBSTITUTE_GITIGNORE
+    editor = vi
 [user]
     name = Blake Wilson
     email = blake@yellowpapersun.com
