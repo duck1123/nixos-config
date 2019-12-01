@@ -84,7 +84,7 @@ in
     gcc
     gdb
     python_with_my_packages
-    nixpkgs.latest.rustChannels.nightly.rust
+    rustracer
   ];
   programs.zsh.enable = true;
 
