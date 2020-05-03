@@ -29,7 +29,7 @@ let g:deoplete#sources#go#gocode_binary = "$GOPATH/bin/gocode"
 
 let g:deoplete#sources#rust#racer_binary=systemlist('which racer')[0]
 let g:deoplete#sources#rust = ['racer']
-" let g:deoplete#sources#rust#rust_source_path="/home/blake/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+let g:deoplete#sources#rust#rust_source_path=$RUST_SRC_PATH
 let g:rustfmt_autosave = 1
 
 let base16colorspace=256

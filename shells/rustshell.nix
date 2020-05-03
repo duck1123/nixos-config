@@ -11,4 +11,5 @@ in
       openssl
       pkg-config
       ];
+    RUST_SRC_PATH ="${nixpkgs.latest.rustChannels.nightly.rust-src}/lib/rustlib/src/rust/src";
   }
