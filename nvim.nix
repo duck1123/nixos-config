@@ -15,6 +15,7 @@
             deoplete-rust
             base16-vim
             vim-highlightedyank
+            vim-autoformat
             vim-racer
           ];
         }; 
@@ -39,6 +40,8 @@ colorscheme base16-tomorrow-night
 
 " auto-format Terraform on save
 let g:terraform_fmt_on_save=1
+
+au BufWrite * :Autoformat
 
 " jump to last edited position in file instead of always starting at the top
 " line, leftmost column
@@ -172,12 +175,6 @@ augroup vimrc_autocmds
 augroup END
 
 autocmd FileType ruby nmap gd :CtrlPTag<cr>
-
-autocmd BufWritePost *.{rs} call FormatRust()
-function FormatRust()
-  silent !cargo fmt --
-  edit
-endfunction
 
 "" Go settings
 au Bufread,BufNewFile *.go noremap grn :GoRename<CR>
