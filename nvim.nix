@@ -10,6 +10,7 @@
             deoplete-go
             ctrlp
             vim-go
+            rust-vim
             deoplete-nvim
             deoplete-rust
             base16-vim
@@ -30,7 +31,8 @@ let g:deoplete#sources#go#gocode_binary = "$GOPATH/bin/gocode"
 let g:deoplete#sources#rust#racer_binary=systemlist('which racer')[0]
 let g:deoplete#sources#rust = ['racer']
 let g:deoplete#sources#rust#rust_source_path=$RUST_SRC_PATH
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
+let g:rustfmt_command = "cargo fmt -- "
 
 let base16colorspace=256
 colorscheme base16-tomorrow-night
@@ -170,6 +172,12 @@ augroup vimrc_autocmds
 augroup END
 
 autocmd FileType ruby nmap gd :CtrlPTag<cr>
+
+autocmd BufWritePost *.{rs} call FormatRust()
+function FormatRust()
+  silent !cargo fmt --
+  edit
+endfunction
 
 "" Go settings
 au Bufread,BufNewFile *.go noremap grn :GoRename<CR>
