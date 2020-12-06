@@ -84,7 +84,7 @@ in
     gcc
     gdb
     python_with_my_packages
-    rustracer
+    # rustracer
     telnet
   ];
   programs.zsh.enable = true;
