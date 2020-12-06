@@ -10,6 +10,7 @@ in
       nixpkgs.latest.rustChannels.nightly.rust-src
       openssl
       pkg-config
+      rustfmt
       ];
     RUST_SRC_PATH ="${nixpkgs.latest.rustChannels.nightly.rust-src}/lib/rustlib/src/rust/src";
   }
