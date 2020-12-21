@@ -86,6 +86,7 @@ in
             python_with_my_packages
 # rustracer
             telnet
+            dmenu
     ];
     programs.zsh.enable = true;
 
