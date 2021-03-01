@@ -73,7 +73,6 @@ in
         wget
             vim
             myNeovim
-# git
             less
             xclip
             firefox
@@ -121,8 +120,15 @@ in
         enable = true;
         layout = "us";
         xkbOptions = "eurosign:e";
+        desktopManager = {
+            xfce = {
+                enable = true;
+                noDesktop = true;
+                enableXfwm = false;
+            };
+        };
         displayManager = {
-            defaultSession = "none+xmonad";
+            defaultSession = "xfce+xmonad";
         };
         windowManager.xmonad = {
             enable = true;
