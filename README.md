@@ -18,6 +18,7 @@ specified in [my dot-files repo](https://github.com/blake-wilson/dot-files).
 * `git remote add origin https://github.com/blake-wilson/nixos-config.git`
 * `git fetch`
 * `git reset origin/master`
+* `git submodule init`
 * `git submodule update`
 * Test the system configuration via `nixos-rebuild test -I nixpkgs=nixpkgs-channels`
 * Switch system configuration: `nixos-rebuild switch -I nixpkgs=nixpkgs-channels`
