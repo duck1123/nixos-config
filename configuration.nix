@@ -82,8 +82,8 @@ in
             binutils
             gcc
             gdb
+            nodejs
             python_with_my_packages
-# rustracer
             telnet
             dmenu
     ];
@@ -98,6 +98,9 @@ in
 
 # Enable the OpenSSH daemon.
     services.openssh.enable = true;
+
+    services.postgresql.enable = true;
+    services.postgresql.package = pkgs.postgresql_12;
 
 # Enable mongodb
 # services.mongodb.enable = true;
