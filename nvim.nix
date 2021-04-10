@@ -34,7 +34,6 @@
                     " auto-format Terraform on save
                     let g:terraform_fmt_on_save=1
 
-                    " au BufWrite * :Autoformat
 
                     " jump to last edited position in file instead of always starting at the top
                     " line, leftmost column
@@ -174,6 +173,7 @@
                     au Bufread,BufNewFile *.go noremap gd :GoDef<CR>
 
                     "" Rust settings
+                    au BufWrite *.rs :Autoformat
                     au Bufread,BufNewFile *.rs noremap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
                     au BufRead,BufNewFile *.frugal setlocal ft=thrift
