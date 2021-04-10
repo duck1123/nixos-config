@@ -173,6 +173,9 @@
                     au Bufread,BufNewFile *.go noremap grn :GoRename<CR>
                     au Bufread,BufNewFile *.go noremap gd :GoDef<CR>
 
+                    "" Rust settings
+                    au Bufread,BufNewFile *.rs noremap gd :call CocAction('jumpDefinition', 'drop')<CR>
+
                     au BufRead,BufNewFile *.frugal setlocal ft=thrift
 
                     " ctrl+p optimization
