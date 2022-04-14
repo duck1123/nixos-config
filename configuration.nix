@@ -126,7 +126,7 @@ in {
       xfce = {
         enable = true;
         noDesktop = false;
-        enableXfwm = false;
+        enableXfwm = true;
       };
     };
     displayManager = {
