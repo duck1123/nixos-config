@@ -71,6 +71,7 @@ in {
     wget
     vim
     myNeovim
+    emacs
     less
     xclip
     firefox
