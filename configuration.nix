@@ -130,10 +130,10 @@ in {
       };
     };
     displayManager = {
-      defaultSession = "xfce+xmonad";
+      defaultSession = "xfce";
     };
     windowManager.xmonad = {
-      enable = true;
+      enable = false;
       enableContribAndExtras = true;
       extraPackages = haskellPackages: with haskellPackages; [
         haskellPackages.xmonad-contrib
