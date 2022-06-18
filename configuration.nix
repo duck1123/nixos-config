@@ -74,9 +74,9 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    vim
+    # vim
     nixfmt
-    myNeovim
+    # myNeovim
     emacs
     less
     xclip
@@ -84,12 +84,12 @@ in {
     zip
     unzip
     binutils
-    gcc
-    gdb
+    # gcc
+    # gdb
     nodejs
-    python_with_my_packages
+    # python_with_my_packages
     telnet
-    dmenu
+    # dmenu
   ];
 
   programs.zsh.enable = true;
@@ -159,5 +159,4 @@ in {
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "21.03"; # Did you read the comment?
-
 }
