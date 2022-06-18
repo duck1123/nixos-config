@@ -5,6 +5,7 @@
 { config, lib, pkgs, ... }:
 
 let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
   moz_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
   nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
   my_python_packages = python-packages: with python-packages; [
@@ -16,6 +17,7 @@ in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    (import "${home-manager}/nixos")
     ./nvim.nix
     ./zsh.nix
     # ./base16/default.nix
