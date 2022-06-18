@@ -64,6 +64,9 @@ in {
     "nixpkgs-overlays=/etc/nixos/overlays"
   ];
 
+  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
