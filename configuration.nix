@@ -93,7 +93,57 @@ in {
     # dmenu
   ];
 
+  # programs.home-manager.enable = true;
   programs.zsh.enable = true;
+  # programs.emacs.enable = true;
+  # programs.htop.enable = true;
+  # programs.npm.enable = true;
+
+  # home.packages = with pkgs; [
+  #     gnome3.gnome-tweak-tool
+  # ];
+
+  # home-manager.users.duck.programs.jq.enable = true;
+  # home-manager.users.duck.programs.zsh.enable = true;
+
+  # home-manager.users.duck = {
+  #   programs.jq.enable = true;
+
+  #   programs.zsh = {
+  #     enable = true;
+  #     enableAutosuggestions = true;
+  #     defaultKeymap = "emacs";
+
+  #     history = {
+  #       expireDuplicatesFirst = true;
+  #       extended = true;
+  #       ignoreDups = true;
+  #     };
+
+  #     oh-my-zsh = {
+  #       enable = true;
+  #       theme = "jonathan";
+  #       plugins = [
+  #         "bgnotify"
+  #         "colorize"
+  #         "command-not-found"
+  #         "compleat"
+  #         # "docker-compose"
+  #         "docker"
+  #         "git"
+  #         "git-extras"
+  #         "history"
+  #         "kubectl"
+  #         "nmap"
+  #         "node"
+  #         "npm"
+  #         "pj"
+  #         "sudo"
+  #         "systemd"
+  #       ];
+  #     };
+  #   };
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
