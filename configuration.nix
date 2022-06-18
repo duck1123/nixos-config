@@ -70,6 +70,7 @@ in {
   environment.systemPackages = with pkgs; [
     wget
     vim
+    nixfmt
     myNeovim
     emacs
     less
